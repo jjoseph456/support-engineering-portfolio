@@ -1,0 +1,38 @@
+[
+  {
+    "incident_id": "INC-1039",
+    "service": "control-plane",
+    "status_code": 200,
+    "latency_ms": 280,
+    "error_rate": 0.01,
+    "retries": 0,
+    "message": "Health checks are passing."
+  },
+  {
+    "incident_id": "INC-1040",
+    "service": "trace-ingest",
+    "status_code": 429,
+    "latency_ms": 740,
+    "error_rate": 0.08,
+    "retries": 2,
+    "message": "Requests are being throttled during a traffic spike."
+  },
+  {
+    "incident_id": "INC-1041",
+    "service": "evaluation-api",
+    "status_code": 503,
+    "latency_ms": 4120,
+    "error_rate": 0.34,
+    "retries": 4,
+    "message": "Upstream model provider returned intermittent failures."
+  },
+  {
+    "incident_id": "INC-1042",
+    "service": "agent-runtime",
+    "status_code": 503,
+    "latency_ms": 5200,
+    "error_rate": 0.62,
+    "retries": 5,
+    "message": "Container terminated with OOMKilled after workload growth."
+  }
+]
