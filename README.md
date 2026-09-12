@@ -25,6 +25,7 @@ workflows.
 | Python and support automation | [Incident Triage CLI](#1-incident-triage-cli) and [Engineering Escalation Checker](#2-engineering-escalation-checker) |
 | Incident ownership and communication | [Incident response playbook](docs/incident-response-playbook.md) and [sample postmortem](docs/sample-postmortem.md) |
 | GitHub platform expertise | [Actions](best-practices/github-actions-secure-reliable-workflows.md), [GHES](best-practices/ghes-operational-readiness.md), and [Advanced Security](best-practices/github-advanced-security-rollout.md) guidance |
+| Standalone public projects | [Workflow Auditor](#github-actions-workflow-auditor) and [GHES Bundle Triage](#ghes-support-bundle-triage) |
 | Project breadth | [Capabilities demonstrated](#capabilities-demonstrated) |
 
 ## Quick Start
@@ -150,13 +151,39 @@ These projects show how I approach common support-engineering problems:
 The repository demonstrates the method and output quality without using
 employer, customer, or support-case material.
 
-## Related Project
+## Standalone Public Projects
 
-[GitHub Actions Workflow Auditor](https://github.com/jjoseph456/github-actions-workflow-auditor)
-is a standalone Python CLI for repeatable workflow security and reliability
-reviews. It checks permissions, action pinning, shell interpolation, privileged
-pull-request patterns, timeouts, concurrency, OIDC boundaries, and reusable
-workflow secret handling.
+### GitHub Actions Workflow Auditor
+
+[`github-actions-workflow-auditor`](https://github.com/jjoseph456/github-actions-workflow-auditor)
+is a Python CLI for repeatable workflow security and reliability reviews.
+
+It provides:
+
+- Ten focused checks covering permissions, action pinning, shell interpolation,
+  privileged pull-request patterns, timeouts, concurrency, OIDC boundaries, and
+  reusable-workflow secret handling
+- Human-readable and JSON reports
+- Configurable CI failure thresholds
+- Secure and intentionally insecure synthetic workflow examples
+- Eleven unit tests, pinned CI dependencies, and an MIT license
+
+### GHES Support Bundle Triage
+
+[`gh-bundle`](https://github.com/jjoseph456/gh-bundle) is a read-only `gh` CLI
+extension for an initial review of GitHub Enterprise Server support bundles.
+
+It demonstrates:
+
+- Selective extraction of diagnostic files instead of expanding an entire
+  multi-gigabyte archive
+- Topology-aware handling of single-node and multi-node bundles
+- Disk, memory, out-of-memory, service-health, and connectivity signals
+- Defensive handling of missing or malformed diagnostic files
+- Human-readable and JSON output with automation-friendly exit codes
+
+The tool is designed as an initial screen that points to source evidence, not
+as a substitute for complete diagnosis.
 
 ## Development
 
