@@ -148,5 +148,4 @@ python -m unittest discover -s tests -v
 
 ## Contact
 
-- GitHub: [jjoseph456](https://github.com/jjoseph456)
 - LinkedIn: [Joseph P. Joseph](https://www.linkedin.com/in/josephpjoseph/)
