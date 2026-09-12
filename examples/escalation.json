@@ -1,0 +1,45 @@
+{
+  "incident_id": "INC-2042",
+  "summary": "Agent executions intermittently fail after workload concurrency increases",
+  "impact": "Approximately 34% of synthetic agent executions in the US test region return HTTP 503 while existing sessions remain available.",
+  "started_at": "2026-09-12T01:05:00Z",
+  "affected_services": [
+    "agent-runtime"
+  ],
+  "reproduction_steps": [
+    "Submit 20 concurrent synthetic execution requests using the documented test payload.",
+    "Observe intermittent HTTP 503 responses while lower-concurrency requests succeed.",
+    "Match failed request correlation IDs to container restart events."
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "observed_at": "2026-09-12T01:08:00Z",
+      "source": "synthetic request log",
+      "observation": "17 of 50 requests returned HTTP 503."
+    },
+    {
+      "id": "E2",
+      "observed_at": "2026-09-12T01:11:00Z",
+      "source": "container event stream",
+      "observation": "Affected containers restarted with an out-of-memory termination reason."
+    }
+  ],
+  "hypotheses": [
+    {
+      "statement": "The concurrency increase may cause containers to exceed their memory limits.",
+      "status": "unverified",
+      "evidence_refs": [
+        "E1",
+        "E2"
+      ]
+    }
+  ],
+  "workaround_status": "Reducing synthetic test concurrency prevents the observed failures.",
+  "engineering_question": "Can engineering confirm whether the new workload configuration increased per-request memory consumption?",
+  "customer_update": {
+    "current_impact": "Synthetic agent executions remain degraded at high concurrency.",
+    "actions_taken": "The issue was reproduced, request failures were correlated with container restarts, and a concurrency reduction was validated as a temporary workaround.",
+    "next_update_at": "2026-09-12T01:45:00Z"
+  }
+}

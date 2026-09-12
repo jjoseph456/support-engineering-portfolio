@@ -26,3 +26,5 @@ jobs:
         run: |
           python -m support_triage examples/incidents.json
           python -m support_triage examples/incidents.json --json
+          python -m escalation_check examples/escalation.json
+          python -m escalation_check examples/escalation.json --json

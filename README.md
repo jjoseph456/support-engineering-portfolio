@@ -14,7 +14,9 @@ workflows.
 > ticket data, or confidential operational details. All examples and data are
 > synthetic.
 
-## Featured Project: Incident Triage CLI
+## Featured Projects
+
+### 1. Incident Triage CLI
 
 `support-triage` is a dependency-free Python command-line tool that turns a
 small batch of synthetic service signals into a prioritized investigation
@@ -58,12 +60,38 @@ MEDIUM    INC-1040       trace-ingest     rate limiting         Inspect rate-lim
 LOW       INC-1039       control-plane    no clear fault        Continue monitoring and compare against the service baseline.
 ```
 
+### 2. Engineering Escalation Checker
+
+`escalation-check` reviews a synthetic escalation package before it reaches an
+engineering team. It verifies that the package includes a clear impact
+statement, reproduction steps, timestamped evidence, explicitly labeled
+hypotheses, a focused engineering question, workaround status, and a complete
+customer update.
+
+```bash
+python -m escalation_check examples/escalation.json
+```
+
+Machine-readable output and an automation gate:
+
+```bash
+python -m escalation_check examples/escalation.json --json
+python -m escalation_check examples/escalation.json --minimum-score 90
+```
+
+The tool treats observations, hypotheses, and confirmed root cause as different
+types of information. That distinction reduces premature conclusions and gives
+engineering a cleaner starting point.
+
 ## Documentation Samples
 
 - [`docs/incident-response-playbook.md`](docs/incident-response-playbook.md) -
   a concise process for triage, escalation, communication, and closure.
 - [`docs/sample-postmortem.md`](docs/sample-postmortem.md) - a blameless
   postmortem built from a fictional container-memory incident.
+- [`docs/engineering-ready-escalations.md`](docs/engineering-ready-escalations.md) -
+  a technical article on converting an ambiguous report into an actionable
+  engineering escalation.
 
 ## Engineering Practices Demonstrated
 
@@ -88,14 +116,23 @@ python -m unittest discover -s tests -v
 .
 |-- .github/workflows/test.yml
 |-- docs/
+|   |-- engineering-ready-escalations.md
 |   |-- incident-response-playbook.md
 |   `-- sample-postmortem.md
-|-- examples/incidents.json
+|-- escalation_check/
+|   |-- __init__.py
+|   |-- __main__.py
+|   `-- checker.py
+|-- examples/
+|   |-- escalation.json
+|   `-- incidents.json
 |-- support_triage/
 |   |-- __init__.py
 |   |-- __main__.py
 |   `-- triage.py
-`-- tests/test_triage.py
+`-- tests/
+    |-- test_escalation_check.py
+    `-- test_triage.py
 ```
 
 ## Contact
