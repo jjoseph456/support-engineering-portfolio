@@ -1,5 +1,9 @@
 # Support Engineering Portfolio
 
+[![CI](https://github.com/jjoseph456/support-engineering-portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/jjoseph456/support-engineering-portfolio/actions/workflows/test.yml)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Practical examples of how I investigate production issues, communicate during
 incidents, and turn recurring support problems into reusable tooling and
 documentation.
@@ -13,6 +17,27 @@ workflows.
 > not contain GitHub source code, customer information, internal documentation,
 > ticket data, or confidential operational details. All examples and data are
 > synthetic.
+
+## Start Here
+
+| If you are evaluating... | Review |
+| --- | --- |
+| Python and support automation | [Incident Triage CLI](#1-incident-triage-cli) and [Engineering Escalation Checker](#2-engineering-escalation-checker) |
+| Incident ownership and communication | [Incident response playbook](docs/incident-response-playbook.md) and [sample postmortem](docs/sample-postmortem.md) |
+| GitHub platform expertise | [Actions](best-practices/github-actions-secure-reliable-workflows.md), [GHES](best-practices/ghes-operational-readiness.md), and [Advanced Security](best-practices/github-advanced-security-rollout.md) guidance |
+| Project breadth | [Capabilities demonstrated](#capabilities-demonstrated) |
+
+## Quick Start
+
+Requires Python 3.10 or later and has no runtime dependencies.
+
+```bash
+git clone https://github.com/jjoseph456/support-engineering-portfolio.git
+cd support-engineering-portfolio
+python -m pip install -e .
+support-triage examples/incidents.json
+escalation-check examples/escalation.json
+```
 
 ## Featured Projects
 
@@ -110,9 +135,35 @@ engineering a cleaner starting point.
 - Actionable incident communication and escalation criteria
 - Reusable documentation designed to reduce repeat support effort
 
-## Test
+## Capabilities Demonstrated
+
+These projects show how I approach common support-engineering problems:
+
+| Area | Example output | Intended outcome |
+| --- | --- | --- |
+| Incident and escalation process review | Triage rules, escalation-quality checks, and runbooks | Faster handoffs and fewer incomplete engineering escalations |
+| GitHub Actions workflow health check | Security and reliability findings with prioritized remediation | Reduced workflow risk and more predictable CI/CD |
+| GHES operational-readiness review | Readiness checklist and operational recommendations | Clearer upgrade, backup, monitoring, and incident preparation |
+| Support automation prototype | Tested Python CLI with machine-readable output and exit codes | Repeatable triage and less manual support work |
+| Technical documentation sprint | Troubleshooting guides, postmortems, and knowledge articles | Better case deflection and reusable operational knowledge |
+
+The repository demonstrates the method and output quality without using
+employer, customer, or support-case material.
+
+## Related Project
+
+[GitHub Actions Workflow Auditor](https://github.com/jjoseph456/github-actions-workflow-auditor)
+is a standalone Python CLI for repeatable workflow security and reliability
+reviews. It checks permissions, action pinning, shell interpolation, privileged
+pull-request patterns, timeouts, concurrency, OIDC boundaries, and reusable
+workflow secret handling.
+
+## Development
+
+Install the package in editable mode and run the test suite:
 
 ```bash
+python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
@@ -121,6 +172,8 @@ python -m unittest discover -s tests -v
 ```text
 .
 |-- .github/workflows/test.yml
+|-- pyproject.toml
+|-- SECURITY.md
 |-- best-practices/
 |   |-- README.md
 |   |-- ghes-operational-readiness.md

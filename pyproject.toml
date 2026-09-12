@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "support-engineering-portfolio"
+version = "1.0.0"
+description = "Synthetic support-engineering automation and operational guidance."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Joseph" }]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: System :: Systems Administration",
+]
+dependencies = []
+
+[project.scripts]
+support-triage = "support_triage.triage:main"
+escalation-check = "escalation_check.checker:main"
+
+[tool.setuptools.packages.find]
+include = ["support_triage*", "escalation_check*"]
