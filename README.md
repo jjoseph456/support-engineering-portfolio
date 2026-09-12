@@ -93,6 +93,12 @@ engineering a cleaner starting point.
   a technical article on converting an ambiguous report into an actionable
   engineering escalation.
 
+## Best-Practice Articles
+
+- [Secure and Reliable GitHub Actions Workflows](best-practices/github-actions-secure-reliable-workflows.md)
+- [GitHub Enterprise Server Operational Readiness](best-practices/ghes-operational-readiness.md)
+- [GitHub Advanced Security Rollout and Operations](best-practices/github-advanced-security-rollout.md)
+
 ## Engineering Practices Demonstrated
 
 - Python data modeling, validation, CLI design, and JSON serialization
@@ -115,6 +121,11 @@ python -m unittest discover -s tests -v
 ```text
 .
 |-- .github/workflows/test.yml
+|-- best-practices/
+|   |-- README.md
+|   |-- ghes-operational-readiness.md
+|   |-- github-actions-secure-reliable-workflows.md
+|   `-- github-advanced-security-rollout.md
 |-- docs/
 |   |-- engineering-ready-escalations.md
 |   |-- incident-response-playbook.md
