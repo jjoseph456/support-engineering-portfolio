@@ -18,6 +18,8 @@ workflows.
 > ticket data, or confidential operational details. All examples and data are
 > synthetic.
 
+![Terminal preview of incident triage output](assets/terminal-preview.svg)
+
 ## Start Here
 
 | If you are evaluating... | Review |

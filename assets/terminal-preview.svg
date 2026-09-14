@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="278" viewBox="0 0 900 278" role="img" aria-labelledby="title desc">
+  <title id="title">Support engineering portfolio terminal output</title>
+  <desc id="desc">Synthetic incident triage output from the support-triage command-line tool.</desc>
+  <rect width="900" height="278" rx="12" fill="#0d1117"/>
+  <rect width="900" height="38" rx="12" fill="#161b22"/>
+  <circle cx="24" cy="19" r="6" fill="#ff5f57"/><circle cx="44" cy="19" r="6" fill="#febc2e"/><circle cx="64" cy="19" r="6" fill="#28c840"/>
+  <g font-family="SFMono-Regular,Consolas,Liberation Mono,monospace" font-size="15">
+    <text x="24" y="70" fill="#8b949e">$ support-triage examples/incidents.json</text>
+    <text x="24" y="106" fill="#c9d1d9">SEVERITY  INCIDENT  SERVICE         LIKELY CATEGORY      NEXT ACTION</text>
+    <text x="24" y="132" fill="#f85149">CRITICAL  INC-1042  agent-runtime   resource exhaustion  Inspect termination reason</text>
+    <text x="24" y="158" fill="#f85149">HIGH      INC-1041  evaluation-api  upstream dependency  Compare provider errors</text>
+    <text x="24" y="184" fill="#d29922">MEDIUM    INC-1040  trace-ingest    rate limiting        Inspect headers and backoff</text>
+    <text x="24" y="232" fill="#3fb950">LOW       INC-1039  control-plane   no clear fault       Continue monitoring</text>
+  </g>
+</svg>
