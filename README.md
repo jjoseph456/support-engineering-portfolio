@@ -24,6 +24,7 @@ workflows.
 | --- | --- |
 | Python and support automation | [Incident Triage CLI](#1-incident-triage-cli) and [Engineering Escalation Checker](#2-engineering-escalation-checker) |
 | Incident ownership and communication | [Incident response playbook](docs/incident-response-playbook.md) and [sample postmortem](docs/sample-postmortem.md) |
+| Applied support-engineering judgment | [Synthetic case-study patterns](docs/synthetic-case-study-patterns.md) |
 | GitHub platform expertise | [Actions](best-practices/github-actions-secure-reliable-workflows.md), [GHES](best-practices/ghes-operational-readiness.md), and [Advanced Security](best-practices/github-advanced-security-rollout.md) guidance |
 | Standalone public projects | [Workflow Auditor](#github-actions-workflow-auditor) and [GHES Bundle Triage](#ghes-support-bundle-triage) |
 | Project breadth | [Capabilities demonstrated](#capabilities-demonstrated) |
@@ -118,6 +119,9 @@ engineering a cleaner starting point.
 - [`docs/engineering-ready-escalations.md`](docs/engineering-ready-escalations.md) -
   a technical article on converting an ambiguous report into an actionable
   engineering escalation.
+- [`docs/synthetic-case-study-patterns.md`](docs/synthetic-case-study-patterns.md) -
+  fictional, privacy-safe examples of evidence-led diagnosis, escalation
+  ownership, and durable operational improvements.
 
 ## Best-Practice Articles
 
@@ -209,7 +213,8 @@ python -m unittest discover -s tests -v
 |-- docs/
 |   |-- engineering-ready-escalations.md
 |   |-- incident-response-playbook.md
-|   `-- sample-postmortem.md
+|   |-- sample-postmortem.md
+|   `-- synthetic-case-study-patterns.md
 |-- escalation_check/
 |   |-- __init__.py
 |   |-- __main__.py
