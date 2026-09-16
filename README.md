@@ -28,6 +28,7 @@ workflows.
 | Incident ownership and communication | [Incident response playbook](docs/incident-response-playbook.md) and [sample postmortem](docs/sample-postmortem.md) |
 | Applied support-engineering judgment | [Synthetic case-study patterns](docs/synthetic-case-study-patterns.md) |
 | Support-system design | [Support operations architecture](docs/support-operations-architecture.md) |
+| Escalation effectiveness | [Escalation effectiveness scorecard](docs/escalation-scorecard.md) |
 | GitHub platform expertise | [Actions](best-practices/github-actions-secure-reliable-workflows.md), [GHES](best-practices/ghes-operational-readiness.md), and [Advanced Security](best-practices/github-advanced-security-rollout.md) guidance |
 | Standalone public projects | [Workflow Auditor](#github-actions-workflow-auditor) and [GHES Bundle Triage](#ghes-support-bundle-triage) |
 | Project breadth | [Capabilities demonstrated](#capabilities-demonstrated) |
@@ -128,6 +129,9 @@ engineering a cleaner starting point.
 - [`docs/support-operations-architecture.md`](docs/support-operations-architecture.md) -
   a visual map of how the public tools support intake, investigation,
   escalation, customer continuity, and knowledge maintenance.
+- [`docs/escalation-scorecard.md`](docs/escalation-scorecard.md) - a privacy-safe
+  framework for measuring escalation quality, update cadence, and reusable
+  learning.
 
 ## Best-Practice Articles
 
