@@ -123,6 +123,9 @@ engineering a cleaner starting point.
 - [`docs/engineering-ready-escalations.md`](docs/engineering-ready-escalations.md) -
   a technical article on converting an ambiguous report into an actionable
   engineering escalation.
+- [`docs/closure-is-not-customer-recovery.md`](docs/closure-is-not-customer-recovery.md) -
+  why an engineering close, an inactivity close, and a verified customer
+  outcome must be recorded separately, with synthetic examples.
 - [`docs/synthetic-case-study-patterns.md`](docs/synthetic-case-study-patterns.md) -
   fictional, privacy-safe examples of evidence-led diagnosis, escalation
   ownership, and durable operational improvements.
@@ -221,6 +224,7 @@ python -m unittest discover -s tests -v
 |   |-- github-actions-secure-reliable-workflows.md
 |   `-- github-advanced-security-rollout.md
 |-- docs/
+|   |-- closure-is-not-customer-recovery.md
 |   |-- engineering-ready-escalations.md
 |   |-- incident-response-playbook.md
 |   |-- sample-postmortem.md
