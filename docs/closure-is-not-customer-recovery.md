@@ -7,7 +7,7 @@ reporting system counts all of them as "resolved," queue health looks better
 than customer health.
 
 This note describes the gap and a small set of controls that close it. All
-numbers below come from a **synthetic** 1,000-case example built for this
+numbers below come from a **synthetic** 200-case example built for this
 portfolio. They illustrate the method, not any real organization.
 
 ## The Problem
@@ -16,19 +16,19 @@ In the synthetic cohort:
 
 | Closure path | Cases | What it actually proves |
 | --- | ---: | --- |
-| Customer confirmed recovery | 380 | Recovery |
-| Engineering decision (fix, limitation, or product decision) | 320 | A technical disposition, not customer recovery |
-| Inactivity auto-close after a customer-wait state | 300 | Only that no reply arrived |
+| Customer confirmed recovery | 90 | Recovery |
+| Engineering decision (fix, limitation, or product decision) | 70 | A technical disposition, not customer recovery |
+| Inactivity auto-close after a customer-wait state | 40 | Only that no reply arrived |
 
-If all 1,000 are reported as resolved, 30% of the "resolution rate" rests on
+If all 200 are reported as resolved, 20% of the "resolution rate" rests on
 silence. Silence has ordinary explanations that are not recovery: the customer
 is waiting for a maintenance window, the failure is intermittent, a workaround
 is in place but untested, or the person who filed the case moved on.
 
 The same cohort shows two more weak signals:
 
-- 250 cases closed without ever having an assigned engineer.
-- 120 cases were reopened, and 45 of those had no new technical decision
+- 30 cases closed without ever having an assigned engineer.
+- 15 cases were reopened, and 6 of those had no new technical decision
   within one business day of the reopen.
 
 ## Separate the States
